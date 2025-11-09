@@ -28,8 +28,9 @@ class BinarySearchTree {
     } else {
       for (let char of arr) {
         if (data === char) {
-          return char;
-        };
+          let indexOfChar = arr.indexOf(char);
+          return {data: this.data[indexOfChar]};
+        }
       }
     }
   }
