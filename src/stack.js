@@ -13,19 +13,27 @@ const { NotImplementedError } = require('../lib/errors');
  *
  */
 class Stack {
-  push(/* value */) {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+  push(value) {
+    if (!this.nums) {
+      this.nums = [];
+    }
+    this.nums.push(value);
   }
 
   pop() {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+    if (!this.nums || this.nums.length === 0) {
+      return undefined;
+    } else {
+      return +this.nums.splice(this.nums.length - 1, 1);
+    }
   }
 
   peek() {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+    if (!this.nums || this.nums.length === 0) {
+      return undefined;
+    } else {
+      return this.nums[this.nums.length - 1];
+    }
   }
 }
 
