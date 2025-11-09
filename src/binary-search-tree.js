@@ -7,7 +7,11 @@ const { NotImplementedError } = require('../lib/errors');
 */
 class BinarySearchTree {
   root() {
-    return {data: this.data[0]};
+    if (!this.data) {
+      return null;
+    } else {
+      return {data: this.data[0]};
+    }
   }
 
   add(data) {
@@ -18,10 +22,15 @@ class BinarySearchTree {
   }
 
   find(data) {
+    let arr = this.data;
     if (!this.data.includes(data)) {
       return null
     } else {
-      return data;
+      for (let char of arr) {
+        if (data === char) {
+          return char;
+        };
+      }
     }
   }
 
@@ -49,7 +58,6 @@ class BinarySearchTree {
     }
     return max;
   }
-
 }
 
 module.exports = {
