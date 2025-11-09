@@ -7,38 +7,47 @@ const { NotImplementedError } = require('../lib/errors');
 */
 class BinarySearchTree {
   root() {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+    return this.data[0];
   }
 
-  add(/* data */) {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+  add(data) {
+    if (!this.data) {
+      this.data = [];
+    }
+    this.data.push(data);
   }
 
-  find(/* data */) {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+  find(data) {
+    if (!this.data.includes(data)) {
+      return null
+    } else {
+      return data;
+    }
   }
 
-  has(/* data */) {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+  has(data) {
+    return this.data.includes(data);
   }
 
-  remove(/* data */) {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+  remove(data) {
+    let indexOfData = this.data.indexOf(data);
+    this.data.splice(indexOfData, 1);
   }
 
   min() {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+    let min = this.data[0];
+    for (let char of this.data) {
+      min = min < char ? min : char;
+    }
+    return min;
   }
 
   max() {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+    let max = 0;
+    for (let char of this.data) {
+      max = max > char ? max : char;
+    }
+    return max;
   }
 }
 
