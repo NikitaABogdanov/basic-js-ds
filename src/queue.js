@@ -18,14 +18,19 @@ class Queue {
     throw new NotImplementedError('Not implemented');
   }
 
-  enqueue(/* value */) {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+  enqueue(value) {
+    if (!this.nums) {
+      this.nums = [];
+    }
+    this.nums.push(value);
   }
 
   dequeue() {
-    // Remove line below and write your code here
-    throw new NotImplementedError('Not implemented');
+    if (!this.nums) {
+      return undefined;
+    } else {
+      return +this.nums.splice(0, 1);
+    }
   }
 }
 
