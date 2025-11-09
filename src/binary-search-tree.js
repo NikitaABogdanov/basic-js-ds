@@ -7,7 +7,7 @@ const { NotImplementedError } = require('../lib/errors');
 */
 class BinarySearchTree {
   root() {
-    return this.data[0];
+    return {data: this.data[0]};
   }
 
   add(data) {
@@ -49,6 +49,7 @@ class BinarySearchTree {
     }
     return max;
   }
+
 }
 
 module.exports = {
